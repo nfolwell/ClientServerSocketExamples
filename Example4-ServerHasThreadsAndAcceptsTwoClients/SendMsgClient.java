@@ -18,9 +18,13 @@ public class SendMsgClient {
         //Create a System.in Scanner so we can type in a message to send.
         Scanner s = new Scanner(System.in);
         String userInput;
+
         System.out.print("Scanner will read your message:");
-        userInput = s.nextLine();
-        //"out" is where the message gets passed and gets sent to the server.
-        out.println(userInput);
+        while ((userInput = s.nextLine())!= null)
+        {
+          //"out" is where the message gets passed and gets sent to the server.
+          out.println(userInput);
+          System.out.print("Scanner will read your message:");
+        }
     }
 }

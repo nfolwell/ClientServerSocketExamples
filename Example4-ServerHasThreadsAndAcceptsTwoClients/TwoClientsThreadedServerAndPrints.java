@@ -55,8 +55,8 @@ class ServerThread extends Thread
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             String inputLine;
             System.out.println("Client connected.  Waiting for message");
-            inputLine = in.readLine();
-            System.out.println("Got client message: "+inputLine);
+            while ((inputLine = in.readLine())!=null)
+               System.out.println("Got client message: "+inputLine);
             } catch (Exception e) { System.out.println("Error in the thread!");}
         }
     }
